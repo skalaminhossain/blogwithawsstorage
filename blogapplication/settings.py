@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,13 +126,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
 STATIC_ROOT = os.path.join(BASE_DIR,"static_root")
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,"media/")
 
-# AWS Storage
 
+AWS_ACCESS_KEY_ID = 'AKIARVGPJVYVCH4BI55R'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'bucketeer-877dd773-51d8-45f1-bff8-64ae71ebc53d'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # Default primary key field type
