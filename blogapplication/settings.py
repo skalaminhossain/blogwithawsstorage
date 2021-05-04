@@ -126,19 +126,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
 STATIC_ROOT = os.path.join(BASE_DIR,"static_root")
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,"media/")
 
 #AWS  Config
-# ACCESS_KEY_ID = 'AKIARVGPJVYVGB6OFLTK'
-# SECRET_ACCESS_KEY = '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'
-# AWS_STORAGE_BUCKET_NAME = 'nasim.secpstorage'
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+ACCESS_KEY_ID = 'AKIARVGPJVYVGB6OFLTK'
+SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'nasim.secpstorage'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # Default primary key field type
