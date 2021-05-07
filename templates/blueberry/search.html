@@ -98,7 +98,7 @@
       <nav class="js-mega-menu navbar navbar-expand-lg">
         <div class="navbar-nav-wrap">
           <!-- Logo -->
-          <a class="navbar-brand navbar-nav-wrap-brand" href="{% url "blog:personalblog" %}" aria-label="Blueberry">
+          <a class="navbar-brand navbar-nav-wrap-brand" href="#" aria-label="Blueberry">
             <img src="{% static "blueberry/assets/svg/logos/logo.svg" %}" alt="Logo">
           </a>
           <!-- End Logo -->
@@ -165,84 +165,20 @@
     <main id="content" role="main">
       <!-- User Profile Section -->
       <div class="container space-top-1 space-bottom-2">
+      
         <div class="border-bottom w-md-75 w-lg-60 space-bottom-2 mx-md-auto">
-          <div class="media d-block d-sm-flex">
-            <div
-              class="position-relative mx-auto mb-3 mb-sm-0 mr-sm-4"
-              style="width: 160px; height: 160px"
-            >
-              <img
-                class="img-fluid rounded-circle"
-                src="{% static 'blueberry/assets/img/160x160/alamin.png' %}"
-                alt="Image Description"
-                width="160"
-                height="160"
-              />
-              <img
-                class="bg-white position-absolute bottom-0 right-0 rounded-circle p-1"
-                src="{% static 'blueberry/assets/svg/illustrations/top-vendor.svg' %}"
-                alt="Icon"
-                width="36"
-                height="36"
-                title="Top Writer"
-              />
-            </div>
-
-            <div class="media-body">
-              <div
-                class="d-flex justify-content-between align-items-center mb-2"
-              >
-                <h1 class="h3">SK Al Amin Hossain</h1>
-                <div class="d-block">
-                  <button
-                    type="button"
-                    class="btn btn-xs btn-outline-primary font-weight-bold text-nowrap ml-1"
-                  >
-                    Follow
-                  </button>
-                </div>
-              </div>
-
-              <div class="row text-body font-size-1 mb-2">
-                <div class="col-auto">
-                  <span class="h6">06</span>
-                  <span>Posts</span>
-                </div>
-                <div class="col-auto">
-                  <span class="h6">15</span>
-                  <span>Followers</span>
-                </div>
-                <div class="col-auto">
-                  <span class="h6">10</span>
-                  <span>Following</span>
-                </div>
-              </div>
-
-              <p class="mb-0">
-                Welcome to my blog site 
-                <a class="font-weight-bold" href="#">sktech.com</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="space-top-1">
-            <div class="bg-navy ">
-              <div class="bg-img-hero-center" style="background-image: url({% static "blueberry/assets/svg/components/abstract-shapes-19.svg" %});">
-                <div class="container space-1">
-                  <div class="w-lg-80 mx-lg-auto">
-                    <!-- Input -->
-                    <form action="{% url 'blog:search_blog' %}" class="input-group input-group-merge input-group-borderless">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="askQuestions">
-                          <i class="fas fa-search"></i>
-                        </span>
-                      </div>
-                      <input type="search" class="form-control" name="q" placeholder="Search for answers" aria-label="Search for answers" aria-describedby="askQuestions">
-                    </form>
-                    <!-- End Input -->
-                  </div>
-                </div>
-              </div>
+    
+           
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'blog:personalblog' %}">Blog Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Search Results</li>
+                    </ol>
+                </nav>
+                
+                <h1>You search: {{ query }}</h1>
+                
+              
             </div>
           </div>
           
@@ -261,7 +197,7 @@
           <!-- End Blog Card -->
 
           <!-- End Blog Card -->
-          {% for i in page_obj %}
+          {% for i in queryset %}
 
           <article class="card mb-3 mb-sm-5" >
             <img
@@ -317,7 +253,7 @@
 
           <div class="space-bottom-2"></div>
 
-          <!-- Pagination -->
+          <!-- Pagination
           <nav aria-label="Page navigation">
             <ul class="pagination mb-0">
               
@@ -376,7 +312,7 @@
             
             </ul>
           </nav>
-          <!-- End Pagination -->
+           End Pagination -->
         </div>
       </div>
       <!-- End Blog Listing Section -->
